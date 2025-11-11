@@ -15,3 +15,7 @@ def crear_pelicula (request, pelicula, genero):
     nueva_pelicula.save()
     return render(request, 'crear_pelicula.html', {'pelicula_guardada': pelicula})
 
+def listar_peliculas(request):
+    peliculas = Pelicula.objects.all()
+    return render(request, 'listar_peliculas.html' ,{'listado_de_peliculas': peliculas })
+
