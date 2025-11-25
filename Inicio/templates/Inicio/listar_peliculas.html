@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title_head %} Listado de Peliculas{% endblock title_head %}
+{% block contenido %}
+
+       <form action={% url "listado" %} method="get">
+        {{formulario}}
+        <input type="submit" value="Buscar">
+        </form>
+
+    {% if listado_de_peliculas %}
+
+    <ul>    
+        {% for pelicula in listado_de_peliculas %}
+
+        <li>
+        {{pelicula}}
+        | <a href={% url "ver" pelicula.id%}>Ver</a> 
+        | <a href={% url "actualizar" pelicula.id %}>Actualizar</a>
+        | <a href={% url "eliminar" pelicula.id %}>Eliminar</a>
+        </li>
+        {% endfor %}
+
+
+    </ul>  
+
+     {% else %}
+
+    <p>No se encontraron peliculas. </p> 
+    {% endif %}
+
+{% endblock contenido %}
+
+ 
+
+
+
+
+
+

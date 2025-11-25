@@ -1,11 +1,14 @@
 from django.urls import path
-from Inicio.views import Inicio, nueva, crear_pelicula, listar_peliculas
+from . import views
 
 urlpatterns = [
+    path('', views.inicio, name='inicio'),
+    path('nueva/', views.nueva, name='nueva'),
+    path('crear_pelicula/', views.crear_pelicula, name='crear'),
+    path('listar_peliculas/', views.listar_peliculas, name='listado'),
+    path('pelicula/<int:id>/', views.ver_pelicula, name='ver'),
+    path('actualizar/<int:id>/', views.actualizar_pelicula, name='actualizar'), 
+    path('eliminar/<int:id>/', views.eliminar_pelicula, name='eliminar'),
 
-    path('', Inicio),
-    path('nueva/', nueva),
-    path('crear_pelicula/<pelicula>/<genero>/', crear_pelicula),
-    path('listado_peliculas/', listar_peliculas)
 
 ]

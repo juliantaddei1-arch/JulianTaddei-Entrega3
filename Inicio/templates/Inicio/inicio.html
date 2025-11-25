@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+  {% block title_head %}
+    Inicio
+    {% endblock title_head %}
+{% block contenido %}
+
+<h1>Biblioteca de Peliculas </h1>
+<body>
+    🎬 Tu Universo Cinematográfico Personal
+¡Bienvenido/a a [Nombre de tu página web]! Tu destino definitivo para explorar y descubrir películas como nunca antes.
+
+Sumérgete en nuestra extensa base de datos y encuentra exactamente lo que buscas, ya sea que te apetezca un clásico de terror de los años 80 o el último éxito de taquilla de ciencia ficción.
+
+✨ Características principales:
+Exploración por Género: Navega fácilmente a través de tus géneros favoritos: drama, comedia, acción, thriller, documental, y muchos más.
+
+Búsqueda por Año: Viaja en el tiempo. Filtra películas por década, o encuentra ese film específico de [Año Ejemplo, e.g., 1999 o 2024].
+
+Fichas Detalladas: Accede a información completa sobre el reparto, sinopsis, calificaciones y datos de producción de cada película.
+
+Empieza tu búsqueda y encuentra tu próxima película favorita hoy mismo.
+
+Consejos Adicionales:
+[Nombre de tu página web]: Asegúrate de reemplazar este marcador con el nombre real de tu sitio.
+
+Llamada a la Acción: Coloca un botón grande con un texto como: "Explorar la Base de Datos" o "Buscar Películas" justo debajo de esta descripción.
+
+</body>
+
+<ul>
+{% for Pelicula in listado_de_peliculas %}
+<li>
+    {{Pelicula}}
+</li>
+    {% endfor %}
+</ul>
+
+{% endblock contenido %}
+

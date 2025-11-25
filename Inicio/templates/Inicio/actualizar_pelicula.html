@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title_head %}Actualizar Película{% endblock title_head %}
+
+{% block contenido %}
+<h1>Actualizar Película</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <input type="submit" value="Guardar cambios">
+</form>
+
+{% endblock contenido %}
+
