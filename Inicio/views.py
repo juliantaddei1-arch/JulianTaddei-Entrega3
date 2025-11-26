@@ -4,6 +4,9 @@ from Inicio.models import Pelicula
 from .forms import BusquedaPeliculaForm
 from Inicio.forms import CrearPelicula
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic.edit import UpdateView, DeleteView
+
+
 
 
 def actualizar_pelicula(request, id):
@@ -55,7 +58,6 @@ def crear_pelicula(request):
 
 def listar_peliculas(request):
 
-
     formulario = BusquedaPeliculaForm(request.GET or None)
 
     if formulario.is_valid():
@@ -90,4 +92,5 @@ from .models import Pelicula
 def ver_pelicula(request, id):
     pelicula = get_object_or_404(Pelicula, id=id)
     return render(request, 'Inicio/ver_pelicula.html', {'pelicula': pelicula})
+
 

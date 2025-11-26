@@ -1,30 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-    {% block title_head %}
-    Inicio
-    {% endblock title_head %}
-    
+    {% block title_head %}Base{% endblock title_head %}
     </title>
-</head>
+<head/>    
 <body>
     <nav>
-    <a href="{% url 'nueva' %}">Nueva</a>
-    <a href="{% url 'crear' %}">Crear pelicula</a>
-    <a href="{% url 'listado' %}">Listado</a>
-    <a href="{% url 'inicio' %}">Inicio</a>
-</nav>
+        <a href={% url "inicio" %}>Inicio</a>
+        <a href={% url "crear" %}>Crear Pelicula</a>
+        <a href={% url "listado" %}>Listar Peliculas</a>
 
-<main>
-{% block contenido %}
 
-{% endblock contenido %}
-</main>
+    
+    </nav>
+
+    <main>
+        {% block contenido %}
+
+        {% endblock contenido %}
+    </main>
 
 </body>
 </html>
-
-
