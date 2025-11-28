@@ -1,0 +1,12 @@
+<h1>Panel Administrativo</h1>
+
+{% extends "base.html" %}
+{% block contenido %}
+
+
+
+<p>Bienvenido {{ request.user.username }}</p>
+
+<a href="/admin/">Ir al admin de Django</a>
+<a href="{% url 'profile' %}">Volver al perfil</a>
+{% endblock contenido %}

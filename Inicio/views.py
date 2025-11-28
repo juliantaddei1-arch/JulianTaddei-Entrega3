@@ -7,8 +7,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic.edit import UpdateView, DeleteView
 
 
-
-
 def actualizar_pelicula(request, id):
     pelicula = Pelicula.objects.get(id=id)
 

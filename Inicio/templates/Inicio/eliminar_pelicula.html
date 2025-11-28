@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title_head %}Eliminar Auto{% endblock title_head %}
+{% block contenido %}
+
+    <form action={% url "eliminar" auto.id %} method='POST'>
+        {% csrf_token %}
+        Confirma el borrado del auto {{auto}}???
+
+        <input type="submit" value="Confirmar" >
+    </form>
+
+
+{% endblock contenido %}

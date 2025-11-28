@@ -1,26 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-    {% block title_head %}Base{% endblock title_head %}
+        {% block title_head %}Base{% endblock title_head %}
     </title>
-<head/>    
+</head>    
 <body>
+
     <nav>
-        <a href={% url "inicio" %}>Inicio</a>
-        <a href={% url "crear" %}>Crear Pelicula</a>
-        <a href={% url "listado" %}>Listar Peliculas</a>
+        <a href="{% url 'inicio' %}">Inicio</a>
+        <a href="{% url 'crear' %}">Crear Pelicula</a>
+        <a href="{% url 'listado' %}">Listar Peliculas</a>
 
-
-    
+        {% if user.is_authenticated %}
+            <span>Hola {{ user.username }}!</span> 
+            <a href="{% url 'perfil' %}">Mi perfil</a>
+            <a href="{% url 'logout' %}">Cerrar sesión</a>
+        {% else %}
+            <a href="{% url 'login' %}">Iniciar sesión</a>
+            <a href="{% url 'registrarse' %}">Registrarse</a>
+        {% endif %}
     </nav>
 
     <main>
         {% block contenido %}
-
         {% endblock contenido %}
     </main>
 
